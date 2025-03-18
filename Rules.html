@@ -16,28 +16,29 @@
             line-height: 1.6;
         }
 
+        /* Container for content */
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        /* Card Styling */
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1.5em;
+            margin: 15px 0;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
         /* Header Styling */
         header {
             background: rgba(255, 255, 255, 0.1);
             padding: 1.5em;
             border-radius: 15px;
-            margin: 20px auto;
-            width: 90%;
-            max-width: 800px;
             backdrop-filter: blur(10px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Section Styling */
-        section {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 1.5em;
-            margin: 15px auto;
-            width: 90%;
-            max-width: 800px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         h1, h2 {
@@ -54,7 +55,6 @@
             padding: 12px;
             margin: 5px 0;
             border-radius: 10px;
-            color: #fff;
             font-weight: bold;
             transition: 0.3s ease;
         }
@@ -82,70 +82,69 @@
 
         /* Responsive Design */
         @media (max-width: 600px) {
-            header, section {
+            .card {
                 padding: 1.2em;
             }
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>🌿 Calm Zone - Rules 📜</h1>
+            <p>Creating a peaceful and respectful community for everyone.</p>
+        </header>
 
-    <header>
-        <h1>🌿 Calm Zone - Rules 📜</h1>
-        <p>Creating a peaceful and respectful community for everyone.</p>
-    </header>
+        <div class="card">
+            <h2>🌟 General Guidelines</h2>
+            <ul>
+                <li>✅ Be Respectful – No hate, bullying, or discrimination.</li>
+                <li>✅ Stay Positive – Keep discussions uplifting.</li>
+                <li>✅ No Spamming – Avoid excessive self-promotion or unnecessary messages.</li>
+                <li>✅ Keep It Relevant – Stay on-topic and contribute meaningfully.</li>
+                <li>✅ Use Common Sense – If it feels inappropriate, don’t post it.</li>
+            </ul>
+        </div>
 
-    <section>
-        <h2>🌟 General Guidelines</h2>
-        <ul>
-            <li>✅ Be Respectful – No hate, bullying, or discrimination.</li>
-            <li>✅ Stay Positive – Keep discussions uplifting.</li>
-            <li>✅ No Spamming – Avoid excessive self-promotion or unnecessary messages.</li>
-            <li>✅ Keep It Relevant – Stay on-topic and contribute meaningfully.</li>
-            <li>✅ Use Common Sense – If it feels inappropriate, don’t post it.</li>
-        </ul>
-    </section>
+        <div class="card">
+            <h2>🚫 Forbidden Content</h2>
+            <ul>
+                <li>❌ No Hate Speech – Discrimination of any kind is not tolerated.</li>
+                <li>❌ No NSFW Content – No adult, violent, or explicit material.</li>
+                <li>❌ No Harassment – Bullying or personal attacks are not allowed.</li>
+                <li>❌ No Illegal Activities – No hacking, piracy, or unlawful behavior.</li>
+            </ul>
+        </div>
 
-    <section>
-        <h2>🚫 Forbidden Content</h2>
-        <ul>
-            <li>❌ No Hate Speech – Discrimination of any kind is not tolerated.</li>
-            <li>❌ No NSFW Content – No adult, violent, or explicit material.</li>
-            <li>❌ No Harassment – Bullying or personal attacks are not allowed.</li>
-            <li>❌ No Illegal Activities – No hacking, piracy, or unlawful behavior.</li>
-        </ul>
-    </section>
+        <div class="card">
+            <h2>📌 Group Etiquette</h2>
+            <ul>
+                <li>✅ Respect different opinions.</li>
+                <li>✅ Keep messages concise and relevant.</li>
+                <li>✅ Report rule violations instead of engaging.</li>
+                <li>✅ English is preferred, but all languages are welcome if used respectfully.</li>
+            </ul>
+        </div>
 
-    <section>
-        <h2>📌 Group Etiquette</h2>
-        <ul>
-            <li>✅ Respect different opinions.</li>
-            <li>✅ Keep messages concise and relevant.</li>
-            <li>✅ Report rule violations instead of engaging.</li>
-            <li>✅ English is preferred, but all languages are welcome if used respectfully.</li>
-        </ul>
-    </section>
+        <div class="card">
+            <h2>🔧 Moderation & Enforcement</h2>
+            <ul>
+                <li>⚠️ Warnings – Minor violations will receive a warning.</li>
+                <li>🔇 Temporary Mute – Repeated violations may result in chat restrictions.</li>
+                <li>🚫 Permanent Ban – Serious offenses will lead to removal.</li>
+                <li>👑 Admins’ Decisions Are Final – No arguing with moderators.</li>
+            </ul>
+        </div>
 
-    <section>
-        <h2>🔧 Moderation & Enforcement</h2>
-        <ul>
-            <li>⚠️ Warnings – Minor violations will receive a warning.</li>
-            <li>🔇 Temporary Mute – Repeated violations may result in chat restrictions.</li>
-            <li>🚫 Permanent Ban – Serious offenses will lead to removal.</li>
-            <li>👑 Admins’ Decisions Are Final – No arguing with moderators.</li>
-        </ul>
-    </section>
+        <div class="card">
+            <h2>📩 Need Help?</h2>
+            <p>If you have any issues, contact our admins:</p>
+            <p>📌 Telegram: <a href="https://t.me/YamiMugen">@YamiMugen</a></p>
+        </div>
 
-    <section>
-        <h2>📩 Need Help?</h2>
-        <p>If you have any issues, contact our admins:</p>
-        <p>📧 Email: <a href="mailto:support@calmzone.com">support@calmzone.com</a></p>
-        <p>📌 Telegram: <a href="https://t.me/CalmZoneAdmin">@CalmZoneAdmin</a></p>
-    </section>
-
-    <footer>
-        <p>© 2025 Calm Zone | Let's create a peaceful space together! 🌈</p>
-    </footer>
-
+        <footer>
+            <p>© 2025 Calm Zone | Let's create a peaceful space together! 🌈</p>
+        </footer>
+    </div>
 </body>
 </html>

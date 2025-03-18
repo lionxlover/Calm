@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Calm Zone 🌿 | Home</title>
+    <title>Calm Zone | Home</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,35 +13,79 @@
 
     <!-- Navigation Menu -->
     <nav>
-        <div class="logo">Calm Zone 🌿</div>
-        <ul>
-            <li><a href="index.html" onclick="loadPage('home')">🏡 Home</a></li>
-            <li><a href="faq.html" onclick="loadPage('faq')">❓ FAQ</a></li>
-            <li><a href="rules.html" onclick="loadPage('rules')">📜 Rules</a></li>
-            <li><a href="contact.html" onclick="loadPage('about')">ℹ️ About</a></li>
+        <div class="logo">Calm Zone</div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul id="nav-menu">
+            <li><a href="index.html">🏡 Home</a></li>
+            <li><a href="faq.html">❓ FAQ</a></li>
+            <li><a href="rules.html">📜 Rules</a></li>
+            <li><a href="contact.html">ℹ️ About</a></li>
         </ul>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Welcome to <span>Calm Zone</span> 🌿</h1>
+        <h1>Welcome to <span>Calm Zone</span></h1>
         <p>A peaceful place to relax, connect, and spread positive vibes.</p>
-        <a href="#" onclick="loadPage('about')" class="cta">Learn More</a>
+        <a href="https://t.me/+hgn41DQy_rE4Y2I9" class="cta">Join Group</a>
+        <a href="https://t.me/boost?c=2398146978" class="btc">Group Upgrade</a>
     </section>
 
-    <!-- Animated Section -->
-    <section class="features">
-        <div class="feature-box">
-            <h2>🌿 Relax & Chill</h2>
-            <p>Join a community that promotes mental peace.</p>
-        </div>
-        <div class="feature-box">
-            <h2>💬 Friendly Chat</h2>
-            <p>Engage in meaningful discussions with positive people.</p>
-        </div>
-        <div class="feature-box">
-            <h2>🎨 Creative Space</h2>
-            <p>Share your art, music, and ideas with like-minded individuals.</p>
+    <!-- Animated Feature Section -->
+    <section class="slider-container">
+        <div class="slider">
+            <button class="slide-btn left-btn">&#10094;</button>  <!-- Left Button -->
+            <div class="card">
+                <h2>🌿 Relax & Chill</h2>
+                <p>Join a community that promotes mental peace.</p>
+            </div>
+        
+            <!-- Friendly Chat -->
+            <div class="card">
+                <h2>💬 Friendly Chat</h2>
+                <p>Engage in meaningful discussions with positive people.</p>
+            </div>
+        
+            <!-- Creative Space -->
+            <div class="card">
+                <h2>🎨 Creative Space</h2>
+                <p>Share your art, music, and ideas with like-minded individuals.</p>
+            </div>
+        
+            <!-- Support & Advice -->
+            <div class="card">
+                <h2>🆘 Support & Advice</h2>
+                <p>Get guidance on life, work, and personal challenges.</p>
+            </div>
+        
+            <!-- Entertainment & Fun -->
+            <div class="card">
+                <h2>🎭 Entertainment & Fun</h2>
+                <p>Enjoy games, memes, and laughter with group members.</p>
+            </div>
+        
+            <!-- Group Events -->
+            <div class="card">
+                <h2>📅 Group Events</h2>
+                <p>Participate in online meetups, discussions, and contests.</p>
+            </div>
+        
+            <!-- Learning & Growth -->
+            <div class="card">
+                <h2>📖 Learning & Growth</h2>
+                <p>Improve skills, learn new things, and expand your knowledge.</p>
+            </div>
+        
+            <!-- Random Chats -->
+            <div class="card">
+                <h2>🎲 Random Chats</h2>
+                <p>Talk about anything and everything with new friends.</p>
+            </div>
+        <button class="slide-btn right-btn">&#10095;</button>  <!-- Right Button -->
         </div>
     </section>
 

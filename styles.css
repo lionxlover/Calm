@@ -1,9 +1,9 @@
-/* Smooth Scroll */
+/* General Styling */
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden; /* Disable horizontal scrolling */
 }
 
-/* General Styling */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -11,6 +11,7 @@ body {
     color: #fff;
     text-align: center;
     background: linear-gradient(135deg, #2a9d8f, #264653);
+    overflow-x: hidden;
 }
 
 /* Particle Background */
@@ -38,11 +39,13 @@ nav {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Logo */
 .logo {
     font-size: 24px;
     font-weight: bold;
 }
 
+/* Menu List */
 nav ul {
     list-style: none;
     padding: 0;
@@ -63,6 +66,61 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #fffa65;
+}
+
+/* Hamburger Menu (Hidden by default) */
+.menu-toggle {
+    position: absolute;
+    left: 20px; /* Adjust this value as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.menu-toggle div {
+    width: 30px;
+    height: 4px;
+    background: #ffdd57;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+/* Responsive Navigation */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.2);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        display: none;
+        padding: 10px 0;
+        border-radius: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .nav-active {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 /* Hero Section */
@@ -100,11 +158,30 @@ nav ul li a:hover {
     background: #fffa65;
 }
 
-/* Features Section */
+.btc {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: #c157ff;
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.btc:hover {
+    background: #c157ff;
+}
+
+/* Features Section with Slide-in Animation */
 .features {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     margin-top: 50px;
+    padding: 20px;
+    overflow: hidden;
 }
 
 .feature-box {
@@ -115,11 +192,15 @@ nav ul li a:hover {
     border-radius: 15px;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+    transform: translateY(30px);
 }
 
-.feature-box:hover {
-    transform: scale(1.05);
+/* Slide-in Animation */
+.feature-box.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Footer */
@@ -128,4 +209,90 @@ footer {
     padding: 20px;
     background: rgba(0, 0, 0, 0.2);
     border-radius: 15px;
+}
+
+/* Slider Container */
+.slider-container {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+/* Slider */
+.slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* Hide scrollbar */
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* Card Styling */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    flex-shrink: 0;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Button */
+.card button {
+    padding: 10px 20px;
+    border: none;
+    background: #ffdd57;
+    color: #000;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card button:hover {
+    background: #fffa65;
+}
+
+/* Slide Buttons */
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    border-radius: 50%;
+    transition: 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+.slide-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.left-btn {
+    left: 10px;
+}
+
+.right-btn {
+    right: 10px;
 }

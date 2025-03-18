@@ -1,24 +1,38 @@
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("Calm Zone Home Page Loaded.");
-    
-    // Ripple effect for buttons
-    const buttons = document.querySelectorAll('.btn');
-    buttons.forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        // Create span element for ripple effect
-        const circle = document.createElement('span');
-        const diameter = Math.max(btn.clientWidth, btn.clientHeight);
-        const radius = diameter / 2;
-        circle.style.width = circle.style.height = `${diameter}px`;
-        circle.style.left = `${e.clientX - btn.offsetLeft - radius}px`;
-        circle.style.top = `${e.clientY - btn.offsetTop - radius}px`;
-        circle.classList.add('ripple');
-        
-        // Remove any existing ripple
-        const ripple = btn.getElementsByClassName('ripple')[0];
-        if (ripple) ripple.remove();
-        
-        btn.appendChild(circle);
+document.addEventListener("DOMContentLoaded", function () {
+  const featureBoxes = document.querySelectorAll(".feature-box");
+
+  function showBoxes() {
+      featureBoxes.forEach((box) => {
+          const boxTop = box.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          if (boxTop < windowHeight - 50) {
+              box.classList.add("show");
+          }
       });
-    });
+  }
+
+  window.addEventListener("scroll", showBoxes);
+  showBoxes(); // Run on page load
+});
+function toggleMenu() {
+  const menu = document.getElementById("nav-menu");
+  menu.classList.toggle("nav-active");
+}
+document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.querySelector(".slider");
+  const leftBtn = document.querySelector(".left-btn");
+  const rightBtn = document.querySelector(".right-btn");
+
+  const scrollAmount = 300; // Adjust how much it scrolls per click
+
+  // Left button scroll
+  leftBtn.addEventListener("click", function () {
+      slider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
   });
+
+  // Right button scroll
+  rightBtn.addEventListener("click", function () {
+      slider.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  });
+});

@@ -26,6 +26,11 @@
             max-width: 800px;
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        header:hover {
+            transform: scale(1.02);
         }
 
         /* FAQ Section */
@@ -47,28 +52,38 @@
         .faq-item {
             background: rgba(255, 255, 255, 0.2);
             margin: 10px 0;
-            padding: 10px;
+            padding: 15px;
             border-radius: 10px;
             cursor: pointer;
-            transition: 0.3s ease;
+            transition: background 0.3s ease, transform 0.2s ease;
         }
 
         .faq-item:hover {
             background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.02);
         }
 
         .faq-question {
             font-weight: bold;
             color: #ffdd57;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .faq-answer {
-            display: none;
-            margin-top: 10px;
-            color: #fff;
-            padding: 10px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out, padding 0.3s ease-in-out;
+            padding: 0 15px;
             background: rgba(0, 0, 0, 0.2);
             border-radius: 8px;
+            color: #fff;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 10px 15px;
         }
 
         footer {
@@ -87,49 +102,55 @@
     </style>
 </head>
 <body>
-
     <header>
         <h1>❓ FAQ - Calm Zone 🌿</h1>
         <p>Find answers to common questions here.</p>
     </header>
 
-    <div class="faq-container">
-        <div class="faq-item" onclick="toggleFAQ(1)">
-            <p class="faq-question">🔹 What is Calm Zone?</p>
-            <p class="faq-answer" id="faq1">Calm Zone is a peaceful online community where people can chat, relax, and share positive vibes. 🌿</p>
-        </div>
-
-        <div class="faq-item" onclick="toggleFAQ(2)">
-            <p class="faq-question">🔹 Are there any rules?</p>
-            <p class="faq-answer" id="faq2">Yes, we have guidelines to maintain a positive environment. Be respectful, avoid spamming, and stay on topic.</p>
-        </div>
-
-        <div class="faq-item" onclick="toggleFAQ(3)">
-            <p class="faq-question">🔹 How can I join the Telegram group?</p>
-            <p class="faq-answer" id="faq3">You can join our group by clicking this link: <a href="https://t.me/CalmZone" style="color: #ffdd57;">Join Calm Zone</a>.</p>
-        </div>
-
-        <div class="faq-item" onclick="toggleFAQ(4)">
-            <p class="faq-question">🔹 Who are the admins?</p>
-            <p class="faq-answer" id="faq4">Our admins are dedicated to keeping the group safe and friendly. Contact <a href="https://t.me/CalmZoneAdmin" style="color: #ffdd57;">@CalmZoneAdmin</a> for help.</p>
-        </div>
-
-        <div class="faq-item" onclick="toggleFAQ(5)">
-            <p class="faq-question">🔹 How do I report someone?</p>
-            <p class="faq-answer" id="faq5">If you notice rule violations, please message an admin or report using Telegram’s built-in report feature.</p>
-        </div>
-    </div>
-
+    <div class="faq-item" onclick="toggleFAQ(this)">
+        <p class="faq-question">🔹 What is Calm Zone? <span>➕</span></p>
+        <p class="faq-answer">Calm Zone is a peaceful Telegram community for connecting, chatting, and relaxing while respecting one another.</p>
+      </div>
+  
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <p class="faq-question">🔹 How can I join? <span>➕</span></p>
+        <p class="faq-answer">Simply click on the invite link <a href="https://t.me/+hgn41DQy_rE4Y2I9">Join Calm Zone</a> to start your journey.</p>
+      </div>
+  
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <p class="faq-question">🔹 Can I promote my content? <span>➕</span></p>
+        <p class="faq-answer">No, promotions and advertisements are not allowed in order to maintain a safe and respectful space for everyone.</p>
+      </div>
+  
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <p class="faq-question">🔹 Is flirting allowed? <span>➕</span></p>
+        <p class="faq-answer">Flirting is allowed only with mutual consent. Any harassment or unwanted advances will result in a ban.</p>
+      </div>
+  
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <p class="faq-question">🔹 What happens if I break the rules? <span>➕</span></p>
+        <p class="faq-answer">Depending on the severity of the violation, you may receive a warning, be muted, or face a permanent ban.</p>
+      </div>
+  
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <p class="faq-question">🔹 Who are the admins? <span>➕</span></p>
+        <p class="faq-answer">Our admins are dedicated to keeping the group safe and friendly. Contact <a href="https://t.me/CalmZoneAdmin" style="color: #ffdd57;">@CalmZoneAdmin</a> for help.</p>
+      </div>
+  
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <p class="faq-question">🔹 How do I report someone? <span>➕</span></p>
+        <p class="faq-answer">If you notice rule violations, please message an admin or report using Telegram’s built-in report feature.</p>
+      </div>
     <footer>
         <p>© 2025 Calm Zone | Keep the peace, spread the positivity! 🌈</p>
     </footer>
 
     <script>
-        function toggleFAQ(id) {
-            let answer = document.getElementById('faq' + id);
-            answer.style.display = (answer.style.display === "block") ? "none" : "block";
+        function toggleFAQ(element) {
+            element.classList.toggle('active');
+            let icon = element.querySelector('.faq-question span');
+            icon.textContent = icon.textContent === '➕' ? '➖' : '➕';
         }
     </script>
-
 </body>
 </html>
