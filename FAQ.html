@@ -1,55 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calm Zone - FAQ</title>
-  <link rel="stylesheet" href="f/styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calm Zone - FAQ ❓</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #2a9d8f, #264653);
+            color: #fff;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* Header Styling */
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5em;
+            border-radius: 15px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 800px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 1.5em;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #ffdd57;
+        }
+
+        /* FAQ Styling */
+        .faq-item {
+            background: rgba(255, 255, 255, 0.2);
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .faq-item:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .faq-question {
+            font-weight: bold;
+            color: #ffdd57;
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 10px;
+            color: #fff;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        footer {
+            margin-top: 20px;
+            padding: 1em;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header, .faq-container {
+                padding: 1.2em;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container faq-container">
-    <h1>❓ Calm Zone - Frequently Asked Questions</h1>
 
-    <div class="faq-item">
-      <div class="question">🔹 What is Calm Zone?</div>
-      <div class="answer">
-        Calm Zone is a peaceful Telegram community for connecting, chatting, and relaxing while respecting one another.
-      </div>
+    <header>
+        <h1>❓ FAQ - Calm Zone 🌿</h1>
+        <p>Find answers to common questions here.</p>
+    </header>
+
+    <div class="faq-container">
+        <div class="faq-item" onclick="toggleFAQ(1)">
+            <p class="faq-question">🔹 What is Calm Zone?</p>
+            <p class="faq-answer" id="faq1">Calm Zone is a peaceful online community where people can chat, relax, and share positive vibes. 🌿</p>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ(2)">
+            <p class="faq-question">🔹 Are there any rules?</p>
+            <p class="faq-answer" id="faq2">Yes, we have guidelines to maintain a positive environment. Be respectful, avoid spamming, and stay on topic.</p>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ(3)">
+            <p class="faq-question">🔹 How can I join the Telegram group?</p>
+            <p class="faq-answer" id="faq3">You can join our group by clicking this link: <a href="https://t.me/CalmZone" style="color: #ffdd57;">Join Calm Zone</a>.</p>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ(4)">
+            <p class="faq-question">🔹 Who are the admins?</p>
+            <p class="faq-answer" id="faq4">Our admins are dedicated to keeping the group safe and friendly. Contact <a href="https://t.me/CalmZoneAdmin" style="color: #ffdd57;">@CalmZoneAdmin</a> for help.</p>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ(5)">
+            <p class="faq-question">🔹 How do I report someone?</p>
+            <p class="faq-answer" id="faq5">If you notice rule violations, please message an admin or report using Telegram’s built-in report feature.</p>
+        </div>
     </div>
 
-    <div class="faq-item">
-      <div class="question">🔹 How can I join?</div>
-      <div class="answer">
-        Simply click on the invite link <a href="https://t.me/+hgn41DQy_rE4Y2I9">Join Calm Zone</a> to start your journey.
-      </div>
-    </div>
+    <footer>
+        <p>© 2025 Calm Zone | Keep the peace, spread the positivity! 🌈</p>
+    </footer>
 
-    <div class="faq-item">
-      <div class="question">🔹 Can I promote my content?</div>
-      <div class="answer">
-        No, promotions and advertisements are not allowed in order to maintain a safe and respectful space for everyone.
-      </div>
-    </div>
+    <script>
+        function toggleFAQ(id) {
+            let answer = document.getElementById('faq' + id);
+            answer.style.display = (answer.style.display === "block") ? "none" : "block";
+        }
+    </script>
 
-    <div class="faq-item">
-      <div class="question">🔹 Is flirting allowed?</div>
-      <div class="answer">
-        Flirting is allowed only with mutual consent. Any harassment or unwanted advances will result in a ban.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="question">🔹 What happens if I break the rules?</div>
-      <div class="answer">
-        Depending on the severity of the violation, you may receive a warning, be muted, or face a permanent ban.
-      </div>
-    </div>
-
-    <div class="footer">
-      <p><a href="index.html">⬅️ Back to Home</a> | <a href="Rules.html">📜 Group Rules</a></p>
-    </div>
-  </div>
-
-  <script src="f/script.js"></script>
 </body>
 </html>
