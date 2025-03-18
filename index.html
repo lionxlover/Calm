@@ -1,42 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calm Zone - Home</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calm Zone 🌿 | Home</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container home-container">
-    <header>
-      <h1 class="animate-header">✦☁️ WɛƖƈσɱɛ ƚσ CαƖɱ Zσɳɛ 🥳🥳☁️✦</h1>
-      <p class="animate-subtitle">🌸 A peaceful place for lovely souls! Let’s connect, respect, and spread love. 🌿🎶</p>
-    </header>
 
-    <section class="description animate-section">
-      <h2>About Calm Zone</h2>
-      <p>
-        Calm Zone is our dedicated Telegram community where like-minded individuals can share positive vibes,
-        engage in respectful conversations, and find daily inspiration. Whether you're looking to make new friends
-        or simply relax in a peaceful environment, our group is the perfect space to unwind and connect.
-      </p>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <div class="logo">Calm Zone 🌿</div>
+        <ul>
+            <li><a href="#" onclick="loadPage('home')">🏡 Home</a></li>
+            <li><a href="#" onclick="loadPage('faq')">❓ FAQ</a></li>
+            <li><a href="#" onclick="loadPage('rules')">📜 Rules</a></li>
+            <li><a href="#" onclick="loadPage('about')">ℹ️ About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to <span>Calm Zone</span> 🌿</h1>
+        <p>A peaceful place to relax, connect, and spread positive vibes.</p>
+        <a href="#" onclick="loadPage('about')" class="cta">Learn More</a>
     </section>
 
-    <section class="links animate-section">
-      <a href="https://t.me/+hgn41DQy_rE4Y2I9" class="btn join-btn">Join Group</a>
-      <a href="https://t.me/boost?c=2398146978" class="btn upgrade-btn">Group Upgrade</a>
+    <!-- Animated Section -->
+    <section class="features">
+        <div class="feature-box">
+            <h2>🌿 Relax & Chill</h2>
+            <p>Join a community that promotes mental peace.</p>
+        </div>
+        <div class="feature-box">
+            <h2>💬 Friendly Chat</h2>
+            <p>Engage in meaningful discussions with positive people.</p>
+        </div>
+        <div class="feature-box">
+            <h2>🎨 Creative Space</h2>
+            <p>Share your art, music, and ideas with like-minded individuals.</p>
+        </div>
     </section>
 
-    <footer class="footer animate-footer">
-      <p>Stay Calm, Stay Connected - Calm Zone</p>
-      <p>
-        <a href="FAQ.html">FAQ</a> | 
-        <a href="Rules.html">Rules</a> | 
-        <a href="Contact.html">Contact</a>
-      </p>
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Calm Zone | Spread positivity! 🌈</p>
     </footer>
-  </div>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
+    <script src="particles.js"></script>
+    <script>
+        particlesJS.load('particles-js', 'particles-config.json', function() {
+            console.log('Particles loaded successfully!');
+        });
+    </script>
 </body>
 </html>
